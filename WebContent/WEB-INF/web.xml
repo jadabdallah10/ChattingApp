@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>ChattingWebApp</display-name>
+ <servlet>
+        <servlet-name>AuthenticationServlet</servlet-name>
+        <servlet-class>servlet.AuthenticationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AuthenticationServlet</servlet-name>
+        <url-pattern>/authenticationServlet</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>ChatServlet</servlet-name>
+        <servlet-class>servlet.ChatServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ChatServlet</servlet-name>
+        <url-pattern>/chatServlet</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>ProcessServlet</servlet-name>
+        <servlet-class>servlet.ProcessServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProcessServlet</servlet-name>
+        <url-pattern>/processServlet</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>FetchMessagesServlet</servlet-name>
+        <servlet-class>servlet.FetchMessagesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FetchMessagesServlet</servlet-name>
+        <url-pattern>/fetchMessagesServlet</url-pattern>
+    </servlet-mapping>
+    
+      <servlet>
+    <servlet-name>cxfservlet</servlet-name>
+    <servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>cxfservlet</servlet-name>
+    <url-pattern>/services/*</url-pattern>
+  </servlet-mapping> 
+  
+
+
+</web-app>

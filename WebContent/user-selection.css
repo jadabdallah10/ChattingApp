@@ -1,0 +1,114 @@
+/* user-selection.css */
+body {
+    display: flex;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    overflow: hidden; /* Prevent page scrolling */
+}
+
+#logo {
+    margin-top: 20px;
+    width: 100%;
+    height: 60px; /* Set a fixed height for the logo container */
+    padding: 0; /* Remove padding to use the full height */
+    background-color: #f8f8f8; /* Light background color for the logo area */
+    text-align: center; /* Center the logo image */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for the logo area */
+    overflow: hidden; /* Ensure any overflow is hidden */
+    position: relative; /* Allows positioning of the image inside the container */
+}
+
+#logo img {
+    width: 100%; /* Make the image fill the width of the container */
+    height: 100%; /* Make the image fill the height of the container */
+    object-fit: cover; /* Cover the entire container while maintaining aspect ratio */
+    display: block; /* Remove any default inline spacing */
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+.user-list {
+    width: 25%;
+    background-color: #f0f0f0;
+    padding: 10px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    height: 100%;
+    overflow-y: auto; /* Make user list scrollable */
+}
+
+.user-item {
+	   display: flex; /* Align items horizontally */
+       justify-content: space-between; /* Space between user name and button */
+       align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+.user-item:hover {
+    background-color: #e0e0e0;
+}
+
+.user-item.selected {
+    background-color: #333; /* Dark grey for selected item */
+    color: #fff; /* White text for better contrast */
+}
+
+.chat-area {
+    width: 75%;
+    padding: 10px;
+    height: 100%; /* Ensure chat area takes up remaining space */
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.search-container {
+    position: relative;
+    width: 100%; /* Full width of the container */
+}
+
+#searchBar {
+    width: 100%; /* Full width of the container */
+    padding: 8px 40px 8px 8px; /* Add padding to the right to make space for the button */
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+#clearButton {
+    position: absolute;
+    right: 10px; /* Space from the right edge */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Center vertically */
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #888;
+    padding: 0; /* Remove default padding */
+    line-height: 1; /* Adjust line height for better alignment */
+}
+
+#clearButton:hover {
+    color: #333;
+}
+
+.profile-button {
+    display: inline-flex; /* Align SVG inline with text */
+    align-items: center; /* Center SVG vertically */
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+    cursor: pointer;
+    font-size: 20px; /* Size of the SVG */
+    color: #007bff; /* Icon color */
+    text-decoration: none; /* Remove underline */
+    margin-left: 10px; /* Space between user name and icon */
+}
+
+.profile-button:hover {
+    color: #0056b3; /* Darker color on hover */
+}

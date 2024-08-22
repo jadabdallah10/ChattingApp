@@ -1,0 +1,175 @@
+/* Base styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #777777, #aaaaaa);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+/* Keyframes for gradient animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.signup-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    animation: cardAnimation 1s ease-in-out;
+}
+
+/* Keyframes for card animation */
+@keyframes cardAnimation {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.signup-card h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #000; /* Changed text color to black */
+    background: none; /* Removed gradient background */
+    animation: none; /* Removed text gradient animation */
+}
+
+.signup-card p {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.signup-card label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.signup-card input[type="text"],
+.signup-card input[type="email"],
+.signup-card input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.signup-card input[type="text"]:focus,
+.signup-card input[type="email"]:focus,
+.signup-card input[type="password"]:focus {
+    border-color: #2a5298;
+    box-shadow: 0 0 8px rgba(42, 82, 152, 0.6);
+    outline: none;
+    animation: inputFocusAnimation 0.3s ease-in-out;
+}
+
+/* Keyframes for input focus animation */
+@keyframes inputFocusAnimation {
+    0% { border-color: #ddd; }
+    100% { border-color: #2a5298; }
+}
+
+.signup-card input[type="submit"] {
+    background-color: #ff69b4; /* Changed button color to pink */
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.signup-card input[type="submit"]:hover {
+    background-color: #ff1493; /* Darker pink for hover */
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.redirect-link {
+    display: inline-block;    
+    color: blue;   
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    margin-top: 20px;
+}
+
+.redirect-link:hover {
+    transform: scale(1.05);
+}
+
+.forgot-password,
+.signup {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.forgot-password a,
+.signup a {
+    color: #2a5298;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.forgot-password a:hover,
+.signup a:hover {
+    color: #1e3c72;
+    text-decoration: underline;
+}
+
+/* Add styles for messages */
+.message {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Success message */
+.success {
+    color: #28a745; /* Green for success */
+    animation: successFadeIn 1s ease-in-out;
+}
+
+/* Error message */
+.error {
+    color: #dc3545; /* Red for error */
+    animation: errorFadeIn 1s ease-in-out;
+}
+
+/* Keyframes for message animations */
+@keyframes successFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes errorFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
