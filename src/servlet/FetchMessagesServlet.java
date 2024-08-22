@@ -94,7 +94,8 @@ public class FetchMessagesServlet extends HttpServlet {
             }
             
             // Append the URL as a clickable link
-            result.append("<a href=\"").append(url).append("\" target=\"_blank\">").append(url).append("</a>");
+            result.append("<a href=\"").append(url).append("\" target=\"_blank\" style=\"color: lightblue;\">").append(url).append("</a>");
+
             lastEnd = matcher.end();
         }
         
