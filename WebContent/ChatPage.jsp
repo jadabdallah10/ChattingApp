@@ -64,6 +64,12 @@
 
             function sendMessage(event) {
                 event.preventDefault();
+                
+                if(document.querySelector('textarea[name="message"]').value.trim() === ""){
+                	return;//do nothing if message is empty
+                	
+                }
+                
                 var form = document.getElementById('sendMessageForm');
                 var formData = new FormData(form); // Use FormData to handle file uploads
                 
