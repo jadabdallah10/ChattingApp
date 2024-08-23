@@ -25,6 +25,7 @@ public class MessageService {
    else{
            try{
         	   int receiverId = AuthenticationServlet.retrieveId(usernameReceive);
+        	   
             MessageStore.addMessage(senderId, receiverId, messageContent); // Store message
            }
            catch (Exception e){

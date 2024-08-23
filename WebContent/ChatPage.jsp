@@ -64,12 +64,14 @@
 
             function sendMessage(event) {
                 event.preventDefault();
-                var file=fileInput.files.length > 0;
-                if(document.querySelector('textarea[name="message"]').value.trim() === "" && !file){
-                	return;//do nothing if message is empty
-                	
+                var messageText = document.querySelector('textarea[name="message"]').value.trim();
+                var file = fileInput.files.length > 0;
+
+                if (messageText === "" && !file) {
+                    // Do nothing if both message and file are empty
+                    return;
                 }
-                
+                	                            
                 var form = document.getElementById('sendMessageForm');
                 var formData = new FormData(form); // Use FormData to handle file uploads
                 
