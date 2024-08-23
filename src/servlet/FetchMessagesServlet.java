@@ -40,17 +40,24 @@ public class FetchMessagesServlet extends HttpServlet {
 
         for (Message message : messages) {
             String messageClass = (message.getSenderId() == senderId) ? "sender" : "receiver";
+            if(message.getContent().contains("http://192.168.0.115:8081/IstiChat/")){
+            	response.getWriter().println("<div class=\"message " + messageClass + "\">" + 
+                        message.getContent().trim() + 
+                        "</div>");
+
+            } else{
             response.getWriter().println("<div class=\"message " + messageClass + "\">" + 
                                          formatMessage(message.getContent()).trim() + 
                                          "</div>");
         }
     }
+ }
 
     private String formatMessage(String text) {
         if (text == null) {
             return "";
         }
-        // Escape HTML special characters
+         //Escape HTML special characters
         String escapedText = escapeHtml(text);
         
         // Replace newlines with <br> tags

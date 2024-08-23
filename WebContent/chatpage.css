@@ -59,8 +59,13 @@ h2 {
     background-color: rgba(255, 255, 255, 0.9); /* Slightly opaque background for the form */
     border-top: 1px solid #ddd;
     display: flex; /* Align items horizontally */
-    flex-direction: column; /* Stack items vertically */
-    align-items: stretch; /* Make textarea and button full width */
+    align-items: center; /* Center align items vertically */
+}
+
+.message-container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    width: 100%;
 }
 
 textarea {
@@ -80,13 +85,26 @@ textarea {
     transition: all 0.3s ease; /* Smooth transition for focus effect */
 }
 
-/* Optional: Add a focus effect for better user experience */
 textarea:focus {
     border: none; /* Remove border on focus */
     outline: none; /* Remove default outline */
     box-shadow: 0 0 8px rgba(128, 128, 128, 0.6); /* Greyish glow for focus */
     background: linear-gradient(135deg, #e0e0e0, #f5f5f5); /* Reverse gradient on focus for a dynamic effect */
 }
+
+.file-icon {
+    font-size: 20px; /* Adjust the size of the icon */
+    cursor: pointer; /* Show pointer cursor to indicate clickable element */
+    margin-left: 10px; /* Space between the textarea and the icon */
+    color: #007bff; /* Color of the icon */
+}
+
+.file-name {
+    margin-left: 10px; /* Space between the attach icon and the file name */
+    font-size: 14px; /* Adjust font size for better readability */
+    color: #333; /* Match text color with the rest of the form */
+}
+
 
 input[type="submit"] {
     padding: 10px 20px;
@@ -95,9 +113,8 @@ input[type="submit"] {
     color: #333; /* Darker text color for better contrast */
     cursor: pointer;
     border-radius: 5px; /* Rounded corners for the button */
-    margin-top: 5px; /* Reduced space between textarea and button */
+    margin-left: 10px; /* Space between the attach icon and the send button */
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
-    align-self: flex-start; /* Align button to the right */
 }
 
 input[type="submit"]:hover {
