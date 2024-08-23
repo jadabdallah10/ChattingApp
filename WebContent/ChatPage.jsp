@@ -64,8 +64,8 @@
 
             function sendMessage(event) {
                 event.preventDefault();
-                
-                if(document.querySelector('textarea[name="message"]').value.trim() === ""){
+                var file=fileInput.files.length > 0;
+                if(document.querySelector('textarea[name="message"]').value.trim() === "" && !file){
                 	return;//do nothing if message is empty
                 	
                 }
